@@ -1,0 +1,21 @@
+<h1>Liste des recettes en ADMIN</h1> <br />
+
+    
+
+  <ul>
+  <% @user.each do |user| %>
+    <% if user.recettes.length != 0 %>
+      <li>
+        <%= user.prenom %> <%= user.nom %>
+        <ol>
+          <% user.recettes.each do |recette| %>
+            <li>
+              <a target=_blank href=recettes/<%= recette.id %>><%= recette.titre %></a>
+            </li>
+          <% end %>
+        </ol>
+      </li>
+    <% end %>
+  <% end %>
+</ul>  
+  

@@ -1,0 +1,11 @@
+{
+   "Ingredients": [
+    <% for i in 0..@nom_ingredient.length-1 %>
+        <%if i== @nom_ingredient.length-1%>
+            "<%= @nom_ingredient[i].nom.html_safe%>"
+        <%else %>
+            "<%= @nom_ingredient[i].nom.html_safe%>",
+        <%end%>
+    <% end %>
+   ]
+}

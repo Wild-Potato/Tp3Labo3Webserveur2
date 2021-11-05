@@ -1,0 +1,19 @@
+
+<h1>
+Recette de <%=@Idrecipe.user.nom%> <%=@Idrecipe.user.prenom%>
+<br />
+  <i><%= @Idrecipe.titre %></i>
+  
+</h1>
+<%= @Idrecipe.etapes %> <br /> <br />
+<ul>
+<li>Recette id: <%= @Idrecipe.id %></li>
+<li>User id: <%= @Idrecipe.user_id %></li>
+<li>Titre: <%= @Idrecipe.titre %></li>
+<li>Étapes: <%= @Idrecipe.etapes %></li>
+<li>Date de création: <%= @Idrecipe.created_at %></li>
+<li>Date de la dernière modification: <%= @Idrecipe.updated_at %></li>
+<li>Nombre d'ingredients: <%= @Idrecipe.ingredients.count %></li>
+</ul>
+
+  

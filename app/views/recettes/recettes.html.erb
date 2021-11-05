@@ -1,0 +1,15 @@
+<h1>
+  <i><%= @Idrecipe.titre %></i>
+  
+</h1>
+<%= @Idrecipe.etapes %> <br /> <br />
+Ingredients :
+<ul>
+    <% for i in 0..@nom_ingredient.length-1 %>
+      <li>
+        <%=@recettesIngredient[i].quantite%> <%= @recettesIngredient[i].unite%> <%= @nom_ingredient[i].nom%>
+      </li>
+    <% end %>
+</ul>
+
+  
