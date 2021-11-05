@@ -5,9 +5,9 @@
 <%= @Idrecipe.etapes %> <br /> <br />
 Ingredients :
 <ul>
-    <% for i in 0..@nom_ingredient.length-1 %>
+    <% for i in 0..@Idrecipe.ingredients.length-1 %>
       <li>
-        <%=@recettesIngredient[i].quantite%> <%= @recettesIngredient[i].unite%> <%= @nom_ingredient[i].nom%>
+        <%=@Idrecipe.recette_ingredients[i].quantite%> <%= @Idrecipe.recette_ingredients[i].unite%> <%= @Idrecipe.ingredients[i].nom%>
       </li>
     <% end %>
 </ul>

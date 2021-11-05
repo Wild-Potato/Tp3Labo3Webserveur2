@@ -1,11 +1,9 @@
-#Raphael Bergeron 2021-11-05
+#Raphael Bergeron
 class HomesController < ApplicationController
 
 
-    before_action :get_recipe, only: [:homes]
-
     def homes
-        
+        get_recipe
        
 
     end
