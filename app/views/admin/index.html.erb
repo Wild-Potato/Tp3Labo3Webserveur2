@@ -1,12 +1,8 @@
 <h1>Liste des recettes en ADMIN</h1> <br />
-
-    
-
-  <ul>
-  <% @user.each do |user| %>
-    <% if user.recettes.length != 0 %>
-      <li>
-        <%= user.prenom %> <%= user.nom %>
+<ul>
+  <% @recette.each do |user, recette| %>
+    <li>
+      <%= user.prenom %> <%= user.nom %>
         <ol>
           <% user.recettes.each do |recette| %>
             <li>
@@ -14,8 +10,6 @@
             </li>
           <% end %>
         </ol>
-      </li>
-    <% end %>
+    </li>
   <% end %>
-</ul>  
-  
+</ul> 

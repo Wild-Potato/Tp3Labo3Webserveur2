@@ -7,10 +7,12 @@ class AdminController < ApplicationController
 
     def index
       get_nom_user
+      get_all_recipe_group_by
     end
 
     def show
       get_recipe_id
+      
         
     end
 
@@ -20,12 +22,15 @@ class AdminController < ApplicationController
     def get_nom_user
       @user = User.all
     end
+    def get_all_recipe_group_by
+      @recette = Recette.all.group_by(&:user)
+    end
     def get_recipe_id
       @Idrecipe = Recette.find(params[:id])
     end
 
     
-    # Prendre note que 1 seul render peut être généré par requête
+    #  -- foreshadowing :)
     def is_admin?
       unless params[:is_admin] && params[:is_admin] == "oui"
         render html: "NOT AUTORIZED"
