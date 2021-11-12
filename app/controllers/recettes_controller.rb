@@ -13,7 +13,7 @@ class RecettesController < ApplicationController
 
 
     def get_recipe_id
-        @Idrecipe = Recette.find(params[:id])
+        @theRecipe = Recette.find(params[:id])
     end
     
 end

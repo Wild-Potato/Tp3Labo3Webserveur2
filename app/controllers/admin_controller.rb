@@ -1,7 +1,10 @@
 #Raphael Bergeron 2021-11-05
 class AdminController < ApplicationController
-    #before_action :is_admin?
+  layout "application"
+    before_action :authenticate_user!
 
+    before_action :is_admin?
+    
    
    
 
@@ -26,14 +29,14 @@ class AdminController < ApplicationController
       @recette = Recette.all.group_by(&:user)
     end
     def get_recipe_id
-      @Idrecipe = Recette.find(params[:id])
+      @theRecipe = Recette.find(params[:id])
     end
 
     
-    #  -- foreshadowing :)
+   
     def is_admin?
-      unless params[:is_admin] && params[:is_admin] == "oui"
-        render html: "NOT AUTORIZED"
+      unless current_user.isAdmin?
+          redirect_to "/"
       end
     end
   

@@ -4,12 +4,23 @@
     <title>Recettes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <% if user_signed_in?%>
+    <%= current_user.nom%>
+    <%= current_user.prenom%>
+    <br />
+    <%= link_to "Deconnection", destroy_user_session_path, method: :delete%>
+  <%else%>
+  Pas Connecté <br />
+    <a href="/users/sign_in"> Se Connecter </a>
+  <%end%>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

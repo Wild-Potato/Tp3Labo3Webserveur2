@@ -1,4 +1,10 @@
 <h1>Liste des recettes</h1> <br />
+
+<%  if user_signed_in? %>
+  <h3><a href="/mesrecettes">Mes Recettes</a></h3>
+<%end%>
+
+<br />
 <% @recettes.each do |recette| %>
   <h2>
     

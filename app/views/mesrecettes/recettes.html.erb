@@ -1,0 +1,16 @@
+<h1> Mes Recettes </h1>
+
+<%=current_user.nom%>
+<%=current_user.prenom%>
+<br />
+Nombre de recettes :
+<%=current_user.recettes.count%>
+<% current_user.recettes.each do |recette| %>
+    <h5>     
+        
+      <a href="/mesrecettes/<%= recette.id %>"><%= recette.titre %></a>      
+    </h5>
+    
+  <% end %>
+
+  

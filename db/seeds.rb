@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-paul = User.create!(nom: "Paul", prenom: "Tremblay", email: "paul@tremblay.com")
-george = User.create!(nom: "George", prenom: "Germain", email: "george@germain.com")
-jacque = User.create!(nom: "Jacque", prenom: "Germain", email: "jacque@germain.com")
-daniel = User.create!(nom: "Daniel", prenom: "Peterson", email: "daniel@peterson.com")
-robert = User.create!(nom: "Robert", prenom: "Skywalker", email: "robert@skywalker.com")
+paul = User.create!(nom: "Paul", prenom: "Tremblay", email: "paul@tremblay.com", password: "123456", isAdmin: 0)
+george = User.create!(nom: "George", prenom: "Germain", email: "george@germain.com", password: "123456", isAdmin: 0)
+jacque = User.create!(nom: "Jacque", prenom: "Germain", email: "jacque@germain.com", password: "123456", isAdmin: 0)
+daniel = User.create!(nom: "Daniel", prenom: "Peterson", email: "daniel@peterson.com", password: "123456", isAdmin: 0)
+robert = User.create!(nom: "Robert", prenom: "Skywalker", email: "robert@skywalker.com", password: "123456", isAdmin: 0)
+admin = User.create!(nom: "Admin", prenom: "Admin", email: "the@admin.com", password: "123456", isAdmin: 1)
 
 oeuf = Ingredient.create!(nom: "Oeuf", unite_defaut: "unite")
 lait = Ingredient.create!(nom: "Lait", unite_defaut: "ml")
