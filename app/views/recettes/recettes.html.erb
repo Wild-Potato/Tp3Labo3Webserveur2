@@ -1,13 +1,13 @@
 <h1>
-  <i><%= @Idrecipe.titre %></i>
+  <i><%= @theRecipe.titre %></i>
   
 </h1>
-<%= @Idrecipe.etapes %> <br /> <br />
+<%= @theRecipe.etapes %> <br /> <br />
 Ingredients :
 <ul>
-    <% for i in 0..@Idrecipe.ingredients.length-1 %>
+    <% for i in 0..@theRecipe.ingredients.length-1 %>
       <li>
-        <%=@Idrecipe.recette_ingredients[i].quantite%> <%= @Idrecipe.recette_ingredients[i].unite%> <%= @Idrecipe.ingredients[i].nom%>
+        <%=@theRecipe.recette_ingredients[i].quantite%> <%= @theRecipe.recette_ingredients[i].unite%> <%= @theRecipe.ingredients[i].nom%>
       </li>
     <% end %>
 </ul>
