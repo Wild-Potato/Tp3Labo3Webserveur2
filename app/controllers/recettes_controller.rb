@@ -1,4 +1,4 @@
-#Raphael Bergeron 2021-11-05
+#Raphael Bergeron 2021-12-01
 class RecettesController < ApplicationController
 
 

@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   
   get '/admin/recettes', to: 'admin#index'
   get '/admin/recettes/:id', to: 'admin#show'
+  get '/admin/ajout', to: 'admin#recipeadd'
+
+  post '/admin/ajout', to: 'admin#recipeaddto'
+
+  get '/admin/edit/:id', to: 'admin#recipeedit'
+
+  patch '/admin/edit/:id', to: 'admin#recipeeditto'
   
 
 end 

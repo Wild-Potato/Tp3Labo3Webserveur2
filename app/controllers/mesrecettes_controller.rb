@@ -1,4 +1,4 @@
-#Raphael Bergeron 2021-11-10
+#Raphael Bergeron 2021-12-01
 class MesrecettesController < ApplicationController
     before_action :authenticate_user!
 
@@ -6,19 +6,19 @@ class MesrecettesController < ApplicationController
 
     def recettes
        @recettes = Recette.all
+       
     end
 
     def marecettes
-        get_recipe_id
-    end
-
-
-    private
-
-
-    def get_recipe_id
         @theRecipe = Recette.find(params[:id])
+        if(@theRecipe.user != current_user)
+            redirect_to "/mesrecettes"
+        end
+        
+       
     end
+
+
     
     
 end

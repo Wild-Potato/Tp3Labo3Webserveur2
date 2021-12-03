@@ -1,0 +1,13 @@
+<!-- #Raphael Bergeron 2021-12-01 -->
+<h1>Edit d'une recette</h1>
+<br />
+<br />
+
+<%= form_with model: @theRecipe, url: "/admin/edit/" + @theRecipe.id.to_s, method: :patch do |form| %>
+    <%= form.label :query, "Nom de la recette:" %><br />
+    <%= form.text_field :titre %><br />
+    <br />
+    <%= form.label :etapes, "Étapes de la recette:" %><br />
+    <%= form.text_area :etapes, size: "70x5" %><br />
+    <%= form.submit "Edit" %>
+  <% end %>

@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+#Raphael Bergeron 2021-11-05
 paul = User.create!(nom: "Paul", prenom: "Tremblay", email: "paul@tremblay.com", password: "123456", isAdmin: 0)
 george = User.create!(nom: "George", prenom: "Germain", email: "george@germain.com", password: "123456", isAdmin: 0)
 jacque = User.create!(nom: "Jacque", prenom: "Germain", email: "jacque@germain.com", password: "123456", isAdmin: 0)
@@ -25,12 +25,20 @@ omelette = Recette.create!(titre: "Omelette",
                               RecetteIngredient.new({quantite: 2, ingredient: oeuf}),
                               RecetteIngredient.new({quantite: 1, ingredient: lait})
                           ])
-omelette2 = Recette.create!(titre: "Omelette gonfflé",
+
+omelette3 = Recette.create!(titre: "Omelette brouiller",
                            etapes: "Cassez les oeufs, mélangez le lait, ajoutez la poudre à pâte, faire cuire dans une poele bien huilée",
                            user: paul,
                            recette_ingredients: [
                                RecetteIngredient.new({quantite: 2, ingredient: oeuf}),
                                RecetteIngredient.new({quantite: 1, ingredient: poudre_pate}),
+                               RecetteIngredient.new({quantite: 1, ingredient: lait})
+                           ])
+                           omelette = Recette.create!(titre: "Omelette",
+                           etapes: "Cassez les oeufs, mélangez le lait, faire cuire dans une poele bien huilée",
+                           user: paul,
+                           recette_ingredients: [
+                               RecetteIngredient.new({quantite: 2, ingredient: oeuf}),
                                RecetteIngredient.new({quantite: 1, ingredient: lait})
                            ])
 

@@ -1,12 +1,16 @@
+<!-- #Raphael Bergeron 2021-12-01 -->
 <h1>Liste des recettes en ADMIN</h1> <br />
+<a target=_blank href=ajout>Ajouter une recette</a>
 <ul>
-  <% @recette.each do |user, recette| %>
+  <% @recetteByUser.each do |user, recettes| %>
     <li>
       <%= user.prenom %> <%= user.nom %>
+      
         <ol>
-          <% user.recettes.each do |recette| %>
+          <% recettes.each do |recette| %>
             <li>
               <a target=_blank href=recettes/<%= recette.id %>><%= recette.titre %></a>
+              <a target=_blank href=edit/<%= recette.id %>>MODIF</a>
             </li>
           <% end %>
         </ol>

@@ -1,0 +1,14 @@
+<!-- #Raphael Bergeron 2021-12-01 -->
+<h1>Ajout d'une recette</h1>
+<br />
+<br />
+
+<%= form_with url: "/admin/ajout", method: :post do |form| %>
+    <%= form.label :query, "Nom de la recette:" %><br />
+    <%= form.text_field :title %><br />
+    <br />
+    <%= form.label :titre, "Étapes de la recette:" %><br />
+    <%= form.text_area :etapes, size: "70x5" %><br />
+    <%= form.submit "Add" %>
+  <% end %>
+  
