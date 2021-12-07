@@ -7,7 +7,7 @@
   <%  if user_signed_in? %>
     <h3><a href="/mesrecettes">Mes Recettes</a></h3>
   <%end%>
-  
+  <%=button_to "Connec_to_Twiiter", "/auth/twitter", method: :post %>
 
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
   <% @recettes.each do |recette| %>
