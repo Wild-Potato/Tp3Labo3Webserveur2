@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:github]
+
   # Relations
   has_many :recettes
 
@@ -11,6 +12,20 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validate :valide_email # Voir la méthode privée du même nom
   #validates :nom, :prenom, presence: true
+
+  def self.from_omniauth(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    unless user
+       user = User.create(
+          email: data['email'],
+          password: Devise.friendly_token[0,20]
+        )
+    end
+    user
+  end
+
 
   # Fonctionnalité privé au modèle
   private
